@@ -35,7 +35,7 @@
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>3.13.0</version>
+        <version>3.141.59</version>
     </dependency>
     <dependency>
         <groupId>com.browserstack</groupId>
@@ -46,6 +46,12 @@
         <groupId>com.googlecode.json-simple</groupId>
         <artifactId>json-simple</artifactId>
         <version>1.1.1</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.5.5</version>
+        <scope>test</scope>
     </dependency>
     </dependencies>
 
@@ -79,7 +85,44 @@
                 </plugins>
             </build>
         </profile>
-
+        <profile>
+            <id>ios</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <includes>
+                                <include>com/browserstack/MobileTest.java</include>
+                            </includes>
+                            <systemPropertyVariables>
+                                <config>ios.conf.json</config>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>android</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <includes>
+                                <include>com/browserstack/MobileTest.java</include>
+                            </includes>
+                            <systemPropertyVariables>
+                                <config>android.conf.json</config>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>local</id>
             <build>

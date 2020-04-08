@@ -5,13 +5,14 @@
 
   "capabilities": {
     "build": "junit-browserstack",
-    "name": "single_test",
+    "name": "mobile_test",
     "browserstack.debug": true,
-    "browserstack.geoLocation": "BR"
+    "device":  "iPhone XR",
+    "realMobile":  "true",
+    "os_version":  "12"
   },
 
   "environments": [{
-    "os": "Windows",
-    "browser": "chrome"
+    "browserName": "iPhone"
   }]
 }

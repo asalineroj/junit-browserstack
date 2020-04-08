@@ -3,10 +3,12 @@
   "user": "BROWSERSTACK_USERNAME",
   "key": "BROWSERSTACK_ACCESS_KEY",
 
+
   "capabilities": {
     "build": "junit-browserstack",
     "name": "parallel_test",
-    "browserstack.debug": true
+    "browserstack.debug": true,
+    "browserstack.geoLocation": "BR"
   },
 
   "environments": [
@@ -20,7 +22,8 @@
     },
     {
       "browser": "safari",
-      "os": "OS X"
+      "os": "OS X",
+      "browser_version": "12.1"
     },
     {
       "browser": "Internet Explorer"
