@@ -15,10 +15,10 @@ public class MobileTest extends BrowserStackJUnitTest {
         WebElement element = driver.findElement(By.name("q"));
 
 //        driver.setFileDetector(new LocalFileDetector());
-        driver.get("https://www.fileconvoy.com/");
-        driver.findElement(By.id("upfile_0")).sendKeys("//Users/admin/Desktop/test.png");
-        driver.findElement(By.id("readTermsOfUse")).click();
-        driver.findElement(By.name("form_upload")).submit();
+//        driver.get("https://www.fileconvoy.com/");
+//        driver.findElement(By.id("upfile_0")).sendKeys("//Users/admin/Desktop/test.png");
+//        driver.findElement(By.id("readTermsOfUse")).click();
+//        driver.findElement(By.name("form_upload")).submit();
 
         element.sendKeys("BrowserStack");
         element.submit();
